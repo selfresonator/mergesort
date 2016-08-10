@@ -12,12 +12,20 @@ var mergeSort = function(array) {
     return array;
   }
 
+  while (condition) {
 
+  }
+
+  mergeSort(merge(left), merge(right));
 
 };
 
 // this merge function will be recusively called for every subaaray until they can be
 // merged together again
 function merge(left, right) {
+  var result = [];
 
+  // while (left.length <= 0 || right.length <= 0) {
+  //
+  // }
 }
