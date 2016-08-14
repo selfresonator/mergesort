@@ -12,9 +12,9 @@ var mergeSort = function(array) {
     return array;
   }
 
-  // while (left.length <= 0 || right.length <= 0) {
-  //
-  // }
+  while (left.length <= 0 || right.length <= 0) {
+
+  }
 
   mergeSort(merge(left), merge(right));
 
@@ -31,6 +31,10 @@ function merge(left, right) {
     } else {
       result.push(right.shift());
     }
+  }
+
+  while (left.length > 0) {
+    result.push(left.shift());
   }
 
   return result;
