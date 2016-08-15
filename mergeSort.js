@@ -8,7 +8,7 @@ var mergeSort = function(array) {
   var left = array.slice(0,mid);
   var right = array.slice(mid,array.length);
 
-  if (array.length <= 2) {
+  if (array.length < 2) {
     return array;
   }
 
@@ -16,17 +16,17 @@ var mergeSort = function(array) {
 
   }
 
-  mergeSort(merge(left), merge(right));
+  return merge(mergeSort(left), mergeSort(right));
 
 };
 
 // this merge function will be recusively called for every subaaray until they can be
 // merged together again
-function merge(left, right) {
+var merge = function(left, right) {
   var result = [];
 
-  while (left.length <= 0 || right.length <= 0) {
-    if(left[0] > right[0]) {
+  while (left.length > 0 && right.length > 0) {
+    if(left[0] <= right[0]) {
       result.push(left.shift());
     } else {
       result.push(right.shift());
@@ -36,6 +36,10 @@ function merge(left, right) {
   while (left.length > 0) {
     result.push(left.shift());
   }
+  while (right.length > 0) {
+    result.push(right.shift());
+  }
 
   return result;
+
 }
