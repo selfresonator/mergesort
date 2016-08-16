@@ -12,10 +12,6 @@ var mergeSort = function(array) {
     return array;
   }
 
-  while (left.length <= 0 || right.length <= 0) {
-
-  }
-
   return merge(mergeSort(left), mergeSort(right));
 
 };
